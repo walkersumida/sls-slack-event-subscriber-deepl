@@ -31,4 +31,4 @@ make deploy
 <img width="663" alt="2023-02-19_17 23 48" src="https://user-images.githubusercontent.com/12683375/219937482-c451c70c-0892-4042-b613-01579152e0b4.png">
 
 # Post a message
-<img width="262" alt="2023-02-19_17 25 16" src="https://user-images.githubusercontent.com/12683375/219937563-1d85055d-862d-4071-9009-83ac2c6ec126.png">
+<img width="258" alt="2023-02-26_15 30 46" src="https://user-images.githubusercontent.com/12683375/221395934-ca85d187-e832-4913-a695-925dd98bfa19.png">
