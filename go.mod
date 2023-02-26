@@ -1,4 +1,4 @@
-module github.com/walkersumida/sls-slack-event-subscriber-template
+module github.com/walkersumida/sls-slack-event-subscriber-deepl
 
 go 1.19
 

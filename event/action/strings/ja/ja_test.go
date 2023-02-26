@@ -3,7 +3,7 @@ package ja_test
 import (
 	"testing"
 
-	"github.com/walkersumida/sls-slack-event-subscriber-template/event/action/strings/ja"
+	"github.com/walkersumida/sls-slack-event-subscriber-deepl/event/action/strings/ja"
 )
 
 func TestIsJA(t *testing.T) {

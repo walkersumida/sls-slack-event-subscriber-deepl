@@ -10,7 +10,7 @@ import (
 	resty "github.com/go-resty/resty/v2"
 	"github.com/slack-go/slack"
 	"github.com/slack-go/slack/slackevents"
-	"github.com/walkersumida/sls-slack-event-subscriber-template/event/action/strings/ja"
+	"github.com/walkersumida/sls-slack-event-subscriber-deepl/event/action/strings/ja"
 )
 
 type DeeplResponse struct {
