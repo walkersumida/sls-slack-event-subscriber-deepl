@@ -22,7 +22,7 @@ type DeeplResponse struct {
 
 func Handler(ctx context.Context, input *slackevents.AppMentionEvent) {
 	cli := slack.New(os.Getenv("SLACK_ACCESS_TOKEN"))
-	text := removeMention(input.Text)
+	text := textWithMentionsRemoved(input.Text)
 	isJa := ja.IsJA(text)
 	targetLang := "JA"
 	if isJa {
@@ -36,18 +36,20 @@ func Handler(ctx context.Context, input *slackevents.AppMentionEvent) {
 	}
 	result := resp.Result().(*DeeplResponse)
 
-	_, _, err = cli.PostMessage(
-		input.Channel,
-		slack.MsgOptionText(
-			result.Translations[0].Text, false,
-		),
-	)
-	if err != nil {
-		log.Printf("failed to post message: %s", err)
+	for _, translation := range result.Translations {
+		_, _, err = cli.PostMessage(
+			input.Channel,
+			slack.MsgOptionText(
+				translation.Text, false,
+			),
+		)
+		if err != nil {
+			log.Printf("failed to post message: %s", err)
+		}
 	}
 }
 
-func removeMention(msg string) string {
+func textWithMentionsRemoved(msg string) string {
 	re := regexp.MustCompile("<@.+?>")
 	return re.ReplaceAllString(msg, "")
 }
